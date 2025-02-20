@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    //Incorrect use of innerHTML leading to unexpected behavior
+    document.getElementById("myDiv").innerHTML = "<p>This is some text.</p>" + "<p>This is some more text.</p>";
+    //The above is equivalent to using += which is better.
+    document.getElementById("myDiv").innerHTML += "<p>This is some more text.</p>";
+    //However, the correct way to add more text without string concatenation would be to use insertAdjacentHTML
+    document.getElementById("myDiv").insertAdjacentHTML('beforeend', '<p>This is even more text.</p>');
+  </script>
+</body>
+</html>

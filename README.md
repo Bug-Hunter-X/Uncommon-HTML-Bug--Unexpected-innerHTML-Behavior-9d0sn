@@ -1,0 +1,1 @@
+This repository demonstrates an uncommon bug related to the use of innerHTML in HTML.  The bug arises from unexpected behavior when repeatedly modifying the innerHTML property using string concatenation.  The solution showcases a more robust and efficient approach using insertAdjacentHTML for dynamic updates.
